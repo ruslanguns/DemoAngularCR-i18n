@@ -13,6 +13,13 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "es-CR",
+        "locales": {
+          "en": "src/locale/messages.en.xlf",
+          "es": "src/locale/messages.es.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -22,17 +29,22 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "localize": true,
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
+            "es": {
+              "localize": ["es"]
+            },
+            "en": {
+              "localize": ["en"]
+            },
+            "es-CR": {
+              "localize": ["es-CR"]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -68,6 +80,15 @@
             "browserTarget": "i18n-demo:build"
           },
           "configurations": {
+            "en": {
+              "browserTarget": "i18n-demo:build:en"
+            },
+            "es": {
+              "browserTarget": "i18n-demo:build:es"
+            },
+            "es-CR": {
+              "browserTarget": "i18n-demo:build:es-CR"
+            },
             "production": {
               "browserTarget": "i18n-demo:build:production"
             }
@@ -86,13 +107,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -104,9 +120,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
