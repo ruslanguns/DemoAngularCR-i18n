@@ -1,27 +1,45 @@
 # I18nDemo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+En este proyecto tengo el pequeño ejemplo que llevé a cabo en la charla que he dado en la comunidad de AngularCR.
 
-## Development server
+El enlace al video lo puedes ver aquí: https://youtu.be/hZA_gmbS65A
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+También puedes ver los slides aquí: https://docs.google.com/presentation/d/1vJ3zFTsmkd6SkuWQfjaaeziVN1loX4UXiUHYAEodH5w/edit?usp=sharing
 
-## Code scaffolding
+## ¿Cómo funciona el proyecto?
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Primero tienes que clonar el repositorio y a continuación instalar las dependencias con yarn o npm.
 
-## Build
+A continuación notarás que he incluido el dist al deploy para que puedan ver los archivos resultantes del comando de generación de traducciones:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+$ ng build --prod --localize
+```
 
-## Running unit tests
+Puedes abrir el entorno de desarrollo como comúnmente lo haces usando `ng serve` pero también puedes añadir el determinado lenguaje. Los disponibles en este proyecto son: es, es-CR y en. Entre el es y es-CR no existen diferencias, me faltó ser más creativo, pero si puedes ver la diferencia entre en y es por supuesto.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para lanzar entonces el entorno de desarrollo de español por ejemplo puedes correr el siguiente comando:
 
-## Running end-to-end tests
+```bash
+$ ng serve --configuration=es
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Por defecto la aplicación se abrirá en el puerto 4200.
 
-## Further help
+Te reto a que la ejecutes en diferentes puertos usando distintos lenguajes:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+$ ng serve --configuration=es-CR --port 4200     # En una terminal
+$ ng serve --configuration=es --port 4201     # En otra ventana del terminal
+$ ng serve --configuration=en --port 4202     # Y en otra más
+```
+
+En este caso lanzarías el entorno de desarrollo en tres distintas ventanas y verías las diferencias y el resultado de tus traducciones.
+
+Sin más, este tutorial es bastante sencillo, te invito a que vallas a la documentación oficial de Angular: https://angular.io/guide/i18n
+
+## Autor
+- Ruslán González
+- Twitter: [@ruslangonzalez](https://twitter.com/ruslangonzalez)
+- Web: [rusgunx.tk](https://rusgunx.tk)
+
