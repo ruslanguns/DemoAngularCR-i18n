@@ -138,8 +138,8 @@ $ ng extract-i18n --output-path src/locale
 5. Creamos a partir del archivo `src/locale/messages.xlf` los respectivos archivos por cada traducción.
 
 ```bash
-$ mv src/locale/messages.xlf src/locale/messages.es.xlf
-$ mv src/locale/messages.xlf src/locale/messages.es.xlf
+$ cp src/locale/messages.xlf src/locale/messages.es.xlf
+$ cp src/locale/messages.xlf src/locale/messages.es.xlf
 ```
 
 6. Traducimos los archivos.
